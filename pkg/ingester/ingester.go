@@ -1587,6 +1587,7 @@ func createUserStats(db *userTSDB) *client.UserStatsResponse {
 		ApiIngestionRate:  apiRate,
 		RuleIngestionRate: ruleRate,
 		NumSeries:         db.Head().NumSeries(),
+		ActiveSeries:      uint64(db.activeSeries.Active()),
 	}
 }
 
